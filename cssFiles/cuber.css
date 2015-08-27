@@ -71,8 +71,7 @@
 	transform: rotateX(-90deg) translateY(100px);
 }
 
-.wrap {
-	/* no more perspective */
+/*.wrap {
 	perspective: none;
 	perspective-origin: 0 0;
-}
+}*/
