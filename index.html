@@ -33,7 +33,7 @@
       document.addEventListener('mouseover', fn2, false);
       document.addEventListener('mouseout', fn3, false);
       
-      var fn = function (e) {
+      function fn(e) {
 	  tooltiper.style.left = e.pageX + 'px';
 	  tooltiper.style.top = e.pageY + 'px';
 	  tooltiper.innerHTML = 'Tag Type: &lt;' + e.path[0].tagName + '&gt;';
@@ -42,11 +42,11 @@
 	  }
       };
 
-      var fn2 = function (e){
+      function fn2(e){
 	  e.path[0].classList.add('onhvrbrd');
       };
 
-      var fn3 = function (e){
+      function fn3(e){
 	  e.path[0].classList.remove('onhvrbrd');
       };
       
