@@ -29,11 +29,8 @@
       tooltiper.className = 'coupontooltip';
       document.getElementsByTagName('body')[0].appendChild(tooltiper);
       
-      document.onmousemove = fn();
-      document.onmouseover = fn1();
-      document.onmouseout = fn2();
       
-      function fn(e) {
+      document.onmousemove = function(e) {
 	  tooltiper.style.left = e.pageX + 'px';
 	  tooltiper.style.top = e.pageY + 'px';
 	  tooltiper.innerHTML = 'Tag Type: &lt;' + e.path[0].tagName + '&gt;';
@@ -42,11 +39,11 @@
 	  }
       };
 
-      function fn2(e){
+      document.onmouseover = function(e){
 	  e.path[0].classList.add('onhvrbrd');
       };
 
-      function fn3(e){
+      document.onmouseout = function(e){
 	  e.path[0].classList.remove('onhvrbrd');
       };
       
