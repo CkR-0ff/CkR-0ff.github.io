@@ -27,6 +27,7 @@
       
       var tooltiper = document.createElement('span');
       tooltiper.className = 'coupontooltip';
+      tooltiper.Id = 'coupontooltip';
       document.getElementsByTagName('body')[0].appendChild(tooltiper);
       
       
@@ -62,10 +63,8 @@
       document.onmouseout = function(e) {
 	return true;
       };
-      console.log('lgl', tooltiper);
-      if(tooltiper){
-      	document.getElementsByTagName('body')[0].removeChild(tooltiper);
-      }
+      var toolt = document.getElementById('coupontooltip');
+      toolt.parentNode.removeChild(toolt);
       
     }
   }
