@@ -60,9 +60,9 @@
       console.log('lg2', fn2);
       console.log('lg3', fn3);
       
-      document.removeEventListener('mousemove', fn, false);
-      document.removeEventListener('mouseover', fn2, false);
-      document.removeEventListener('mouseout', fn3, false);
+      document.removeEventListener('mousemove', fn, true);
+      document.removeEventListener('mouseover', fn2, true);
+      document.removeEventListener('mouseout', fn3, true);
       
     }
   }
