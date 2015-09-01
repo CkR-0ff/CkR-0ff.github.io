@@ -43,7 +43,7 @@
 	  for(var i = 0; i<e.path[0].attributes.length; i++){
 	      tooltiper.innerHTML += '<br>' + e.path[0].attributes[i].name + ': ' + e.path[0].attributes[i].value;
 	  }
-	  console.log('tytt', e.path[0].tagName);
+	  
       };
 
       document.onmouseover = function(e){
@@ -69,8 +69,8 @@
       document.onmouseout = function(e) {
 	return true;
       };
-      var toolt = document.getElementsByTagName('body')[0].getElementById('coupontooltip');
-      toolt.parentNode.removeChild(toolt);
+      var toolt = document.getElementById('coupontooltip');
+      console.log('tytt', toolt);
       
     }
   }
