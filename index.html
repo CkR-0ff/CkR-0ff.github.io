@@ -39,7 +39,7 @@
       document.onmousemove = function(e) {
 	  tooltiper.style.left = e.pageX + 'px';
 	  tooltiper.style.top = e.pageY + 'px';
-	  tooltiper.innerHTML = 'Tag Type: &lt;' + e.path[0].tagName + '&gt;';
+	  tooltiper.innerHTML = 'Tag Type: ' + e.path[0].tagName + '';
 	  for(var i = 0; i<e.path[0].attributes.length; i++){
 	      tooltiper.innerHTML += '<br>' + e.path[0].attributes[i].name + ': ' + e.path[0].attributes[i].value;
 	  }
