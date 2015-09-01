@@ -56,13 +56,13 @@
 	return true;
       };
       
-      console.log('lg1', fn);
-      console.log('lg2', fn2);
       console.log('lg3', fn3);
       
       document.removeEventListener('mousemove', fn, false);
       document.removeEventListener('mouseover', fn2, false);
       document.removeEventListener('mouseout', fn3, false);
+      
+      console.log('lg3-post', fn3);
       
     }
   }
