@@ -29,9 +29,9 @@
       tooltiper.className = 'coupontooltip';
       document.getElementsByTagName('body')[0].appendChild(tooltiper);
       
-      document.addEventListener('mousemove', fn, false);
-      document.addEventListener('mouseover', fn2, false);
-      document.addEventListener('mouseout', fn3, false);
+      document.onmousemove = fn(e);
+      document.onmouseover = fn1(e);
+      document.onmouseout = fn2(e);
       
       function fn(e) {
 	  tooltiper.style.left = e.pageX + 'px';
@@ -40,17 +40,14 @@
 	  for(var i = 0; i<e.path[0].attributes.length; i++){
 	      tooltiper.innerHTML += '<br>' + e.path[0].attributes[i].name + ': ' + e.path[0].attributes[i].value;
 	  }
-	  this.removeEventListener('mousemove', arguments.callee);
       };
 
       function fn2(e){
 	  e.path[0].classList.add('onhvrbrd');
-	  this.removeEventListener('mouseover', arguments.callee);
       };
 
       function fn3(e){
 	  e.path[0].classList.remove('onhvrbrd');
-	  this.removeEventListener('mouseout', arguments.callee);
       };
       
     }else{
@@ -59,13 +56,16 @@
 	return true;
       };
       
-      console.log('lg3', fn3);
+      document.onmousemove = function(e) {
+	return true;
+      };
+      document.onmouseover = function(e) {
+	return true;
+      };
+      document.onmouseout = function(e) {
+	return true;
+      };
       
-      document.removeEventListener('mousemove', fn, false);
-      document.removeEventListener('mouseover', fn2, false);
-      document.removeEventListener('mouseout', fn3, false);
-      
-      console.log('lg3-post', document.removeEventListener);
       
     }
   }
