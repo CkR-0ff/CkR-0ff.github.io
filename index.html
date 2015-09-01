@@ -15,7 +15,7 @@
 	
   <a href="javascript: (
   function (){
-    
+    var tooltiper = null;
     if(!localStorage.RClck){
       localStorage.RClck = true;
       document.oncontextmenu = function(e) { 
@@ -69,7 +69,6 @@
       document.onmouseout = function(e) {
 	return true;
       };
-      var toolt = document.getElementById('coupontooltip');
       console.log('tytt', toolt);
       
     }
