@@ -8,12 +8,61 @@
 <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
 
 <body>
-  <a href="javascript: (  function (){    
-  var exists = false;    var allScripts = document.getElementsByTagName('script');    
-  if(allScripts){      for(var i = 0; i<allScripts.length; i++){if(allScripts[i].src == 'https://rawgit.com/CkR-0ff/JSRepo/master/NeverStoper.js'){  exists = true;}      }    }        
-  if(!exists){      var done = false;      var scr = document.createElement('script');      scr.src = 'https://rawgit.com/CkR-0ff/JSRepo/master/NeverStoper.js';     
-  scr.onload = scr.onreadystatechange = function(){  if (!done && (!scr.readyState || scr.readyState == 'loaded' || scr.readyState == 'complete')) {      done = true;      roller();  }      };      
-  document.getElementsByTagName('head')[0].appendChild(scr);    }else{      roller();    }      }());">
+  <a href="javascript: (
+  function (){
+    
+    if(!localStorage.RClck){
+      localStorage.RClck = true;
+      document.oncontextmenu = function(e) { 
+	e.preventDefault(); 
+	var trg = e.target; 
+	console.log('-->', trg); 
+	trg.style.display = 'none';
+      };
+      
+      var stl = document.createElement('style');
+      var txtnode = document.createTextNode('body:hover .coupontooltip {display: block;} .coupontooltip {display: none; background: #C8C8C8; margin-left: 5px; padding: 0px; position: absolute; z-index: 1000;} .onhvrbrd {border-style: solid; border-width: 1px; border-color:red}');
+      stl.appendChild(txtnode);
+      document.getElementsByTagName('head')[0].appendChild(stl);
+      
+      var tooltiper = document.createElement('span');
+      tooltiper.className = 'coupontooltip';
+      document.getElementsByTagName('body')[0].appendChild(tooltiper);
+      
+      document.addEventListener('mousemove', fn, false);
+      document.addEventListener('mouseover', fn2, false);
+      document.addEventListener('mouseout', fn3, false);
+      
+      function fn(e) {
+	  tooltiper.style.left = e.pageX + 'px';
+	  tooltiper.style.top = e.pageY + 'px';
+	  tooltiper.innerHTML = 'Tag Type: &lt;' + e.path[0].tagName + '&gt;';
+	  for(var i = 0; i<e.path[0].attributes.length; i++){
+	      tooltiper.innerHTML += '<br>' + e.path[0].attributes[i].name + ': ' + e.path[0].attributes[i].value;
+	  }
+      };
+
+      function fn2(e){
+	  e.path[0].classList.add('onhvrbrd');
+      };
+
+      function fn3(e){
+	  e.path[0].classList.remove('onhvrbrd');
+      };
+      
+    }else{
+      localStorage.removeItem('RClck');
+      document.oncontextmenu = function(e) {
+	return true;
+      };
+      
+      document.removeEventListener('mousemove', fn, false);
+      document.removeEventListener('mouseover', fn2, false);
+      document.removeEventListener('mouseout', fn3, false);
+      
+    }
+  }
+)();">
     <img style="width: 15px; heigth:15px" src='/images/Marklet.png'></img>
   </a>
 </body>
