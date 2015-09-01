@@ -29,9 +29,9 @@
       tooltiper.className = 'coupontooltip';
       document.getElementsByTagName('body')[0].appendChild(tooltiper);
       
-      document.onmousemove = fn;
-      document.onmouseover = fn1;
-      document.onmouseout = fn2;
+      document.onmousemove = fn();
+      document.onmouseover = fn1();
+      document.onmouseout = fn2();
       
       function fn(e) {
 	  tooltiper.style.left = e.pageX + 'px';
