@@ -69,7 +69,10 @@
       document.onmouseout = function(e) {
 	return true;
       };
-      console.log('tytt', document.getElementsByClassName('coupontooltip'));
+      var thetools = document.getElementsByClassName('coupontooltip');
+      for(var i = 0; i < thetools.length; i++){
+      	thetools[i].parentElement.removeChild(thetools[i]);
+      }
     }
   }
 )();">
