@@ -126,4 +126,4 @@ var testString2 = function(){/*javascript: (
     }
   }
 )();*/
-}.toString().slice(12, -2);
+}.toString().slice(14, -4);
