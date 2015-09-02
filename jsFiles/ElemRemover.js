@@ -63,8 +63,7 @@
   }\
 )();";
 
-var testString2 = function() {
-  /*javascript: (
+var testString2 = function(){/*javascript: (
   function (){
     var tooltiper = null;
     if(!localStorage.RClck){
