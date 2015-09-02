@@ -127,4 +127,4 @@ var testString2 = function() {
     }
   }
 )();*/
-}.toString().slice(19, -4);
+}.toString().slice(0);
